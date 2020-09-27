@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "start": "webpack-dev-server --config webpack.client.js --mode development --open --hot",
+    "build": "webpack --config webpack.client.js --mode production"
   },
   "author": "Manu M",
   "license": "ISC",
