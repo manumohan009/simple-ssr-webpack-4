@@ -25,19 +25,25 @@ app.get("*", (req, res) => {
         </Loadable.Capture>
     )
     let bundles = getBundles(stats, modules);
+    let scripts = bundles.filter(bundle => bundle.file.endsWith('.js'));
+    let styles = bundles.filter(bundle => bundle.file.endsWith('.css'));
+    // console.log(bundles,'bundles')
     const content =
         `<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        ${styles.map(style => {
+            return `<link href="/${style.file}" rel="stylesheet"/>`
+          }).join('\n')}
         <link rel="stylesheet" type="text/css" href="/main.css" />
         <title>Webpack-4</title>
     </head>
     <body>
         <div id="root">${html}</div>
-        ${bundles.map(bundle => {
-            return `<script src="/dist/${bundle.file}"></script>`
+        ${scripts.map(script => {
+            return `<script src="/${script.file}"></script>`
             // alternatively if you are using publicPath option in webpack config
             // you can use the publicPath value from bundle, e.g:
             // return `<script src="${bundle.publicPath}"></script>`

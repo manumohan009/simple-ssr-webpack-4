@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Loadable from 'react-loadable';
 import './ContactUsPage.scss';
 const Loading = () =>{
     return(
@@ -6,11 +7,12 @@ const Loading = () =>{
     )
 }
 
-import Loadable from 'react-loadable';
+
 const LoadableFirstTest = Loadable({
     loader: () => import('./../../components/FirstTest/FirstTest'),
     loading: Loading,
 });
+// import LoadableSecondTest from './../../components/SecondTest/SecondTest';
 const LoadableSecondTest = Loadable({
     loader: () => import('./../../components/SecondTest/SecondTest'),
     loading: Loading,
