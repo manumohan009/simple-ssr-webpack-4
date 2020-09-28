@@ -4,27 +4,40 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.client.js --mode development --open --hot",
-    "build": "webpack --config webpack.client.js --mode production"
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:server": "nodemon --watch build --exec node build/bundle.js",
+    "dev:build-server": "webpack --config webpack.server.js --mode development --watch",
+    "dev:build-client": "webpack --config webpack.client.js --mode development --watch"
   },
   "author": "Manu M",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-router-config": "^5.1.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.3.0",
     "html-webpack-plugin": "^4.5.0",
+    "ignore-loader": "^0.1.2",
     "mini-css-extract-plugin": "^0.11.2",
     "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
     "sass-loader": "^10.0.2",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-node-externals": "^2.5.2"
   }
 }
