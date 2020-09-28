@@ -1,10 +1,21 @@
 
 import React from 'react';
-// import { Route } from 'react-router-dom';
-
 import App from './App'
 import HomePage from './pages/HomePage/HomePage';
-import ContactUsPage from './pages/ContactUsPage/ContactUsPage';
+// import LoadableContactUsPage from './pages/ContactUsPage/ContactUsPage';
+import Loadable from 'react-loadable';
+
+const Loading = () =>{
+    return(
+        <div>Loading</div>
+    )
+}
+
+
+const LoadableContactUsPage = Loadable({
+    loader: () => import('./pages/ContactUsPage/ContactUsPage'),
+    loading: Loading,
+});
 
 export default [
     {
@@ -17,9 +28,14 @@ export default [
             },
             {
                 path: "/contact-us",
-                component: ContactUsPage,
+                component: LoadableContactUsPage,
                 exact: true,
             },
+            // {
+            //     path: "/myaccount",
+            //     component: LoadableContactUsPage,
+            //     exact: true,
+            // },
         ]
     }
 ]

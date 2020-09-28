@@ -1,8 +1,7 @@
 const path = require('path');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// import { ReactLoadablePlugin } from 'react-loadable/webpack';
 const ReactLoadablePlugin = require('react-loadable/webpack').ReactLoadablePlugin;
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     entry: './src/client/client.js',
@@ -27,15 +26,13 @@ module.exports = {
         ]
     },
     plugins: [
-        // new HtmlWebpackPlugin({
-        //     template: './src/index.html'
-        // }),
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[id].css',
         }),
         new ReactLoadablePlugin({
             filename: 'public/react-loadable.json',
-          }),
+        }),
+        // new CleanWebpackPlugin()
     ]
 }

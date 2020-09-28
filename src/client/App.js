@@ -12,7 +12,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <h1>My APP</h1>
+                <h1>My APP is working!</h1>
                 <div className="">{renderRoutes(this.props.route.routes)}</div>
             </div>
 
