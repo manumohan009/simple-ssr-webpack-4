@@ -1,6 +1,8 @@
 const path = require('path');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// import { ReactLoadablePlugin } from 'react-loadable/webpack';
+const ReactLoadablePlugin = require('react-loadable/webpack').ReactLoadablePlugin;
 
 module.exports = {
     entry: './src/client/client.js',
@@ -31,6 +33,9 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[id].css',
-        })
+        }),
+        new ReactLoadablePlugin({
+            filename: 'public/react-loadable.json',
+          }),
     ]
 }

@@ -6,15 +6,15 @@ const Loading = () =>{
     )
 }
 
-// import Loadable from 'react-loadable';
-// const LoadableFirstTest = Loadable({
-//     loader: () => import('./../../components/FirstTest/FirstTest'),
-//     loading: Loading,
-// });
-// const LoadableSecondTest = Loadable({
-//     loader: () => import('./../../components/SecondTest/SecondTest'),
-//     loading: Loading,
-// });
+import Loadable from 'react-loadable';
+const LoadableFirstTest = Loadable({
+    loader: () => import('./../../components/FirstTest/FirstTest'),
+    loading: Loading,
+});
+const LoadableSecondTest = Loadable({
+    loader: () => import('./../../components/SecondTest/SecondTest'),
+    loading: Loading,
+});
 
 class ContactUsPage extends Component {
     constructor(props){
@@ -24,8 +24,8 @@ class ContactUsPage extends Component {
         return(
             <div id="contactus-page">
                 ContactUs Page 1
-                {/* <LoadableFirstTest /> */}
-                {/* <LoadableSecondTest /> */} <br/>
+                <LoadableFirstTest />
+                <LoadableSecondTest /> <br/>
                 <button onClick={()=>{this.props.history.push('/')}}>Go to Home page</button>
             </div>
         )
