@@ -29,5 +29,10 @@ class HomePage extends Component {
     }
 }
 
-export default HomePage;
+const loadData = ()=>{}
+
+export default{
+    loadData,
+    component: HomePage
+};
 

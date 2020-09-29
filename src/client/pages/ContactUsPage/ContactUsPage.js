@@ -34,5 +34,11 @@ class ContactUsPage extends Component {
     }
 }
 
-export default ContactUsPage;
+const loadData = ()=>{}
+
+export default {
+    loadData,
+    component: ContactUsPage
+};
+// export default ContactUsPage
 

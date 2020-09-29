@@ -21,6 +21,9 @@ function mapStateToProps(state) {
     return { users: state.users };
 }
 
+const loadData = ()=>{}
+
 export default {
+    loadData,
     component: connect(mapStateToProps, { fetchUsers })(UsersListPage)
 }
