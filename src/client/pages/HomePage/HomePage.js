@@ -24,6 +24,7 @@ class HomePage extends Component {
                 Home Page 
                 <LoadableFirstTest /><br/>
                 <button onClick={()=>{this.props.history.push('/contact-us')}}>Go to Contact us page</button>
+                <button onClick={()=>{this.props.history.push('/users')}}>Go to UsersList page</button><br/>
             </div>
         )
     }

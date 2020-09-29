@@ -2,10 +2,9 @@
 import React from 'react';
 import App from './App'
 import HomePage from './pages/HomePage/HomePage';
-import UsersListPage from './pages/UsersListPage/UsersListPage';
+// import LoadableUsersListPage from './pages/UsersListPage/UsersListPage';
 // import LoadableContactUsPage from './pages/ContactUsPage/ContactUsPage';
 import Loadable from 'react-loadable';
-const loadDataFunctions = new Map()
 
 const Loading = () => {
     return (
@@ -13,20 +12,32 @@ const Loading = () => {
     )
 }
 
+// const LoadableContactUsPage = Loadable({
+//     loader: () => import('./pages/ContactUsPage/ContactUsPage').then(obj => {
+//         const loadData = obj.default.loadData;
+//         if (loadData) {
+//             loadDataFunctions.set('ContactUsPage', loadData)
+//         } else {
+//             loadDataFunctions.set('ContactUsPage', null)
+//         }
+//         return obj.default.component
+//     }),
+//     loading: Loading,
+// });
+
+import ContactUsPageLoadData from './pages/ContactUsPage/ContactUsPageLoadData';
 const LoadableContactUsPage = Loadable({
-    loader: () => import('./pages/ContactUsPage/ContactUsPage').then(obj => {
-        // console.log(obj.default.loadData)
-        const loadData = obj.default.loadData;
-        if (loadData) {
-            loadDataFunctions.set('contactUsPage', loadData)
-        } else {
-            loadDataFunctions.set('contactUsPage', null)
-        }
-        console.log(loadDataFunctions.get('contactUsPage'));
-        return obj.default.component
-    }),
+    loader: () => import('./pages/ContactUsPage/ContactUsPage'),
+    loading: Loading,
+})
+
+import UsersListPageLoadData from './pages/UsersListPage/UsersListLoadData';
+const LoadableUsersListPage = Loadable({
+    loader: () => import('./pages/UsersListPage/UsersListPage'),
     loading: Loading,
 });
+
+
 
 
 
@@ -42,13 +53,15 @@ export default [
             },
             {
                 // ...LoadableContactUsPage,
-                loadData: loadDataFunctions.get('contactUsPage'),
+                loadData: ContactUsPageLoadData,
                 component: LoadableContactUsPage,
                 path: "/contact-us",
                 exact: true,
             },
             {
-                ...UsersListPage,
+                // ...UsersListPage,
+                loadData: UsersListPageLoadData,
+                component: LoadableUsersListPage,
                 path: "/users",
                 exact: true,
             },

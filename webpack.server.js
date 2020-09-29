@@ -4,7 +4,7 @@ const webpackNodeExternals = require('webpack-node-externals');
 
 module.exports = {
     target: 'node',
-    entry: './src/index.js',
+    entry: ["@babel/polyfill",'./src/index.js'],
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js',

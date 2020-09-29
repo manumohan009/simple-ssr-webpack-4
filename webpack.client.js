@@ -4,7 +4,7 @@ const ReactLoadablePlugin = require('react-loadable/webpack').ReactLoadablePlugi
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
-    entry: './src/client/client.js',
+    entry: ["@babel/polyfill",'./src/client/client.js'],
     output: {
         path: path.join(__dirname, '/public'),
         filename: 'bundle.js',

@@ -25,10 +25,11 @@ class ContactUsPage extends Component {
     render(){
         return(
             <div id="contactus-page">
-                ContactUs Page 1
+                ContactUs Page
                 <LoadableFirstTest />
                 <LoadableSecondTest /> <br/>
                 <button onClick={()=>{this.props.history.push('/')}}>Go to Home page</button>
+                <button onClick={()=>{this.props.history.push('/users')}}>Go to UsersList page</button><br/>
             </div>
         )
     }
@@ -36,9 +37,6 @@ class ContactUsPage extends Component {
 
 const loadData = ()=>{}
 
-export default {
-    loadData,
-    component: ContactUsPage
-};
+export default ContactUsPage
 // export default ContactUsPage
 
