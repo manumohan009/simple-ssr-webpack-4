@@ -2,6 +2,7 @@
 import React from 'react';
 import App from './App'
 import HomePage from './pages/HomePage/HomePage';
+import UsersListPage from './pages/UsersListPage/UsersListPage';
 // import LoadableContactUsPage from './pages/ContactUsPage/ContactUsPage';
 import Loadable from 'react-loadable';
 
@@ -29,6 +30,11 @@ export default [
             {
                 path: "/contact-us",
                 component: LoadableContactUsPage,
+                exact: true,
+            },
+            {
+                path: "/users",
+                component: UsersListPage,
                 exact: true,
             },
             // {
