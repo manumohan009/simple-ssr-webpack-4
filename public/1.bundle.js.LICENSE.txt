@@ -1,0 +1,11 @@
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! no static exports found */
+
+/*!********************************************************!*\
+  !*** ./src/client/components/SecondTest/SecondTest.js ***!
+  \********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/client/components/SecondTest/SecondTest.scss ***!
+  \**********************************************************/

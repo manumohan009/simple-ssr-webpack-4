@@ -1,9 +1,9 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ReactLoadablePlugin = require('react-loadable/webpack').ReactLoadablePlugin;
-const TerserJSPlugin = require('terser-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // creates a CSS file per JS file
+const ReactLoadablePlugin = require('react-loadable/webpack').ReactLoadablePlugin; // for code splitting
+const TerserJSPlugin = require('terser-webpack-plugin'); // to minify js
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // to optimize \ minimize CSS assets
 var webpack = require('webpack');
 module.exports = env => {
     console.log('NODE_ENV: ', env.NODE_ENV);
@@ -57,6 +57,7 @@ module.exports = env => {
             new webpack.optimize.ModuleConcatenationPlugin(), //minify everything
         ],
         optimization: {
+            minimize: true,
             minimizer: [new TerserJSPlugin({
               terserOptions: {
                 compress: {

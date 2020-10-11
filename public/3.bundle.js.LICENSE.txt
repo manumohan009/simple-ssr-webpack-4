@@ -1,0 +1,11 @@
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! no static exports found */
+
+/*!*********************************************************!*\
+  !*** ./src/client/pages/UsersListPage/UsersListPage.js ***!
+  \*********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./src/client/pages/UsersListPage/UsersListPage.scss ***!
+  \***********************************************************/
